@@ -14,7 +14,7 @@ scale = [100,100];
 croppedEdgeMap = imresize(croppedEdgeMap, scale); 
 
 %% Import the images for the library 
-imagefiles = dir('*.jpeg');      
+imagefiles = dir('*.jpg');      
 nfiles = length(imagefiles);
 images = cell(nfiles,1); 
 for i=1:nfiles
