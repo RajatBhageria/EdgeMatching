@@ -11,7 +11,7 @@ lib_points = [x(libraryEdgeMap==1),y(libraryEdgeMap==1)];
 query_points = [x(croppedEdgeMap==1),y(croppedEdgeMap==1)];
 [~,d] = dsearchn(lib_points, query_points);
 
-cost = sum(d);
+cost = sum(d.^2)/size(d,1);
 
 
 end
