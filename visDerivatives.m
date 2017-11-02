@@ -13,7 +13,7 @@ thr = val(find(cumsum(cnt) / sum(cnt) < 0.95, 1, 'last'));
 [x, y] = meshgrid(1 : size(I_gray, 2), 1 : size(I_gray, 1));
 Magx(Mag < thr) = 0; 
 Magy(Mag < thr) = 0;
-figure; imshow(I_gray); hold on
+%figure; imshow(I_gray); hold on
 quiver(x, y, Magx, Magy,'AutoScale', 'off');
 hold off
 

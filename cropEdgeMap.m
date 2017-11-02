@@ -37,11 +37,6 @@ ymin = minI;
 height = maxI - minI; 
 
 rect = [xmin, ymin, width, height]; 
-% 
-% figure;scatter(minJ,minI);
-% hold on; scatter(minJ,-height); 
-% hold on ; scatter(maxJ,-height); 
-% hold on; scatter(width, maxI); 
 
 croppedEdgeMap = imcrop(edgeMap, rect); 
 end

@@ -18,8 +18,8 @@ imagefiles = dir('library/*.jpg');
 nfiles = length(imagefiles);
 images = cell(nfiles,1); 
 for i=1:nfiles
-   currentfilename = imagefiles(ii).name;
-   currentimage = imread(currentfilename);
+   currentfilename = imagefiles(i).name;
+   currentimage = imread(strcat('library/',currentfilename));
    images{i} = currentimage;
 end
 

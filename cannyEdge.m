@@ -24,10 +24,10 @@ visDerivatives(I_gray, Mag, Magx, Magy);
 %% Detect local maximum
 %% **TODO: finish the nonMaxSup function
 M = nonMaxSup(Mag, Ori);
-figure; imagesc(M); colormap(gray);
+%figure; imagesc(M); colormap(gray);
 
 %% Link edges
 %% **TODO: finish the edgeLink function
 E = edgeLink(M, Mag, Ori);
-figure; imagesc(E); colormap(gray);
+%figure; imagesc(E); colormap(gray);
 end
