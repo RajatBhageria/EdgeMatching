@@ -17,7 +17,7 @@ function E = edgeLink(M, Mag, Ori)
 J = M .* Mag;
 
 %% Set the thresholds
-k_low = 15; 
+k_low = 3; 
 k_high = 2.5 * k_low; 
 
 %% Do the thresholding 
