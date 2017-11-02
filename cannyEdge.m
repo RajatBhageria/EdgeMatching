@@ -19,7 +19,7 @@ end
 %% Compute magnitutde and orientation of derivatives
 %% **TODO: finish the findDerivative function
 [Mag, Magx, Magy, Ori] = findDerivatives(I_gray);
-visDerivatives(I_gray, Mag, Magx, Magy);
+%visDerivatives(I_gray, Mag, Magx, Magy);
 
 %% Detect local maximum
 %% **TODO: finish the nonMaxSup function
