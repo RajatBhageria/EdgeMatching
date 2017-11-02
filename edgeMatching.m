@@ -54,5 +54,5 @@ end
 label = bestMatchLabel;
 
 %accuracy score should be between 0 and 1
-accuracyScore = 100*cost / maxCost; 
+accuracyScore = 100*(maxCost - cost) / maxCost; 
 end
