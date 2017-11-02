@@ -1,4 +1,4 @@
-function [label, accuracyScore] = edgeMatching(query)
+function [label, probability] = edgeMatching(query)
 % @param query: a nxmx3 image 
 % @return label: a string label of the image that has the most similar edge as the query image 
 % @return accuracyScore: a score between 0 and 1 of the accuracy of the label to the query
@@ -54,5 +54,6 @@ end
 label = bestMatchLabel;
 
 %accuracy score should be between 0 and 1
-accuracyScore = 100*(maxCost - cost) / maxCost; 
+probability = 100*(maxCost - cost) / maxCost; 
+
 end
