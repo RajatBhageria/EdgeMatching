@@ -4,11 +4,14 @@ function [libraryOfEdgeMaps] = createLibraryForEdgeMapping(images, scale)
 %% @return libraryOfEdgeMaps: a px1 cell array of images 
 %% Items in libraryOfEdgeMaps and labelsOfLibrary correspond to each other 
 
-%% crop all the images 
-images{1:size(images,1)} = cropEdgeMap(images{1:size(images,1)});
+for image = 1;size(images,1)
+    %% crop all the images
+    images{image,1} = cropEdgeMap(images{image,1});
+    
+    %% Scale all the images to 100x100
+    images{image,1} = imresize(images{image,1},scale);
 
-%% Scale all the images to 100x100
-images{1:size(images,1)} = images{imresize(images{1:size(images,1)}, scale)};
+end 
 
 %% Return the libraryOfEdgeMaps
 libraryOfEdgeMaps = images; 
