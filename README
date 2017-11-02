@@ -1,0 +1,5 @@
+The main class for our edge matching algorithm is edgeMatching.m
+
+It takes in two one parameter, a nxmx3 query image. Note that right now our algorithm is based on the images found in the /library folder and thus only works with images in our /query folder. 
+
+Simply call edgeMatching(query) with a nxmx3 query image from our /query class and our matching algorithm should tell you whether the image is "Accurpril", "Vicodin", "Advil C&S", or "Ibuprofen"

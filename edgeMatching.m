@@ -1,5 +1,6 @@
 function [label, probability] = edgeMatching(query)
-% @param query: a nxmx3 image 
+% @param query: a nxmx3 image. Each of the query images has to be from the
+% query folder 
 % @return label: a string label of the image that has the most similar edge as the query image 
 % @return accuracyScore: a score between 0 and 1 of the accuracy of the label to the query
 
@@ -35,6 +36,8 @@ labelsOfLibrary ={'Accupril','Accupril', 'Advil C&S', 'Iboprufen','Iboprufen', '
 minCost = 1000000000; 
 maxCost = 0; 
 bestMatchLabel='';
+
+%loop through all the images in the library and find the closest match 
 for index = 1:size(libraryOfEdgeMaps,1)
     libraryEdgeMap = libraryOfEdgeMaps{index};
     cost = computeCostOfDifference(croppedEdgeMap,libraryEdgeMap); 
@@ -50,10 +53,10 @@ for index = 1:size(libraryOfEdgeMaps,1)
     end 
 end 
 
-%% Return the label of the library image with it's accuracy score 
+%% Return the label of the library image with it's probability score 
 label = bestMatchLabel;
 
-%accuracy score should be between 0 and 1
+%probability score should be between 0 and 1
 probability = 100*(maxCost - cost) / maxCost; 
 
 end
