@@ -10,7 +10,7 @@ edgeMap = cannyEdge(query);
 croppedEdgeMap = cropEdgeMap(edgeMap); 
 
 %% Scale down the query image to a given scale 
-scale = [100,100];
+scale = [200,200];
 croppedEdgeMap = imresize(croppedEdgeMap, scale); 
 
 %% Import the images for the library 
