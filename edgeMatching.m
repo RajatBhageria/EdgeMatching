@@ -27,8 +27,10 @@ end
 %libraryOfEdgeMaps is a px1 cell array of cropped and scaled edge maps 
 %labelsOfLibrary is a px1 vector of labels for each edge map in the libraryOfEdgeMaps
 [libraryOfEdgeMaps] =  createLibraryForEdgeMapping(images, scale);
-labelsOfLibrary = {"Accupril", "Accupril",  "Advil C&S", "Iboprufen", "Iboprufen", "Iboprufen", "Vicodin", "Vicodin", "Vicodin"}; %emember px1 not 1xp! 
-labelsOfLibrary = string(labelsOfLibrary);
+
+labelsOfLibrary ={'Accupril','Accupril', 'Advil C&S', 'Iboprufen','Iboprufen', 'Iboprufen', 'Iboprufen', 'Vicodin', 'Vicodin', 'Vicodin'};
+%labelsOfLibrary = string(labelsOfLibrary);
+
 %% Loop over all the images in our library and find the one with the smallest cost 
 minCost = 1000000000; 
 maxCost = 0; 
@@ -40,7 +42,7 @@ for index = 1:size(libraryOfEdgeMaps,1)
     %seen so far 
     if (cost < minCost)
         minCost = cost; 
-        bestMatchLabel = labelsOfLibrary(index,1); 
+        bestMatchLabel = labelsOfLibrary{1,index}; 
     end 
     % find the maxCost to find the accuracy score 
     if (cost > maxCost)
@@ -50,6 +52,7 @@ end
 
 %% Return the label of the library image with it's accuracy score 
 label = bestMatchLabel;
+
 %accuracy score should be between 0 and 1
-accuracyScore = cost / maxCost; 
+accuracyScore = 100*cost / maxCost; 
 end
