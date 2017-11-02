@@ -27,8 +27,8 @@ end
 %libraryOfEdgeMaps is a px1 cell array of cropped and scaled edge maps 
 %labelsOfLibrary is a px1 vector of labels for each edge map in the libraryOfEdgeMaps
 [libraryOfEdgeMaps] =  createLibraryForEdgeMapping(images, scale);
-labelsOfLibrary = ["Accupril", "Accupril",  "Advil C&S", "Iboprufen", "Iboprufen", "Iboprufen", "Vicodin", "Vicodin", "Vicodin"]; %emember px1 not 1xp! 
-
+labelsOfLibrary = {"Accupril", "Accupril",  "Advil C&S", "Iboprufen", "Iboprufen", "Iboprufen", "Vicodin", "Vicodin", "Vicodin"}; %emember px1 not 1xp! 
+labelsOfLibrary = string(labelsOfLibrary);
 %% Loop over all the images in our library and find the one with the smallest cost 
 minCost = 1000000000; 
 maxCost = 0; 
